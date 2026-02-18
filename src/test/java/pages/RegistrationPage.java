@@ -13,40 +13,24 @@ public class RegistrationPage { // класс — Page Object
 
 
   public static SelenideElement firstNameInput =$("#firstName");
-
   public static SelenideElement lastNameInput =$("#lastName");
-
   public static SelenideElement userEmailInput =$("#userEmail");
-
   public static SelenideElement genderWrapper =$("#genterWrapper");
-
   public static SelenideElement userNumberInput =$("#userNumber");
-
   public static SelenideElement calendarInput =$("#dateOfBirthInput");
-
   public static SelenideElement checkResult =$(".table-responsive");
-
   public static SelenideElement subjectsInput =$("#subjectsInput");
-
   public static SelenideElement hobbiesCheckbox =$("#hobbies-checkbox-2");
-
   public static SelenideElement uploadPictureInput =$("#uploadPicture");
-
   public static SelenideElement currentAddressInput =$("#currentAddress");
-
   public static SelenideElement stateInput =$("#state input");
-
   public static SelenideElement cityInput =$("#city input");
-
   public static SelenideElement clickSubmit =$("#submit");
-
   public static SelenideElement checkModalContent =$(".modal-content");
-
   public static SelenideElement checkModalSizesTitleLg =$("#example-modal-sizes-title-lg");
 
 
 
-  CalendarComponent calendarComponent = new CalendarComponent();
 
   public RegistrationPage openPage() {
     open("/automation-practice-form"); // открыли страницу
@@ -82,6 +66,8 @@ public class RegistrationPage { // класс — Page Object
     return this;  // данный метод не ведет на другую страницу, код становится более читаемым
   }
 
+
+  CalendarComponent calendarComponent = new CalendarComponent();
 
   public RegistrationPage setDateOfBirth(String day, String month, String year) {
     calendarInput.click();
