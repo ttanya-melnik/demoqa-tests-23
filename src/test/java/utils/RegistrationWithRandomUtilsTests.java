@@ -32,7 +32,7 @@ public class RegistrationWithRandomUtilsTests {
   @Test
   void fillFormTest() {
 
-    // ГЕНЕРИРУЕМ СЛУЧАЙНЫЕ СТРОКИ
+    // генерируем случайные строки
     String firstName = getRandomString(10);
     String lastName = getRandomString(10);
     String userEmail = getRandomEmail();
