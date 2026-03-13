@@ -28,7 +28,7 @@ public class CheckBoxTests {
    $("h1").shouldHave(text("Check Box"));
 
     // клик на кнопку «Home»
-    $(".rct-checkbox").click();
+    $(".rc-tree-checkbox").click();
 
     // проверка иконки expand (стрелка вправо)
     $("button[aria-label='Toggle']").click();

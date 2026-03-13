@@ -32,7 +32,7 @@ public class RegistrationWithJavaFakerTests {
     // что помогает тестировать разные аспекты приложения без использования реальных производственных данных.
 
 
-    // ПРИМЕНЯЕМ JAVA-FAKER
+    // применяем Java-Faker
     Faker faker = new Faker();
      String firstName = faker.name().firstName(); // firstName: "Shonna"
      String lastName = faker.name().lastName(); // lastName: "Hansen"

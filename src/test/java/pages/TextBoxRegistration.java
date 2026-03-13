@@ -68,7 +68,7 @@ public class TextBoxRegistration {
    return this;
  }
 
- public TextBoxRegistration checkPermanentAddress(String permanentAddress) {
+ public TextBoxRegistration checkPermanentAddress (String permanentAddress) {
    checkPermanentAddress.shouldHave(text(permanentAddress));
    return this;
  }

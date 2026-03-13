@@ -33,7 +33,7 @@ public class TextBoxRegistrationWithPageObject {
         .checkUserName("Alex")
         .checkUserEmail("alex@egorov.com")
         .checkCurrentAddress("Some street 1")
-        .setPermanentAddress("Another street");
+        .checkPermanentAddress("Another street");
   }
 }
 
