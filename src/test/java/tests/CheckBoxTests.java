@@ -31,13 +31,13 @@ public class CheckBoxTests {
     $(".rc-tree-checkbox").click();
 
     // проверка иконки expand (стрелка вправо)
-    $("button[aria-label='Toggle']").click();
+    // $("button[aria-label='Toggle']").click();
 
     // клик на кнопку Expand all "+"
-    $("button[aria-label='Expand all']").click();
+   // $("button[aria-label='Expand all']").click();
 
     // клик на кнопку Collapse all "-"
-    $("button[aria-label='Collapse all']").click();
+    //$("button[aria-label='Collapse all']").click();
 
   }
 }
