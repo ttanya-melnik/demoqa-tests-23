@@ -24,6 +24,7 @@ public class CheckBoxTests {
     // открыть сайт
     open("https://demoqa.com/checkbox");
 
+
     // проверить заголовок
    $("h1").shouldHave(text("Check Box"));
 
