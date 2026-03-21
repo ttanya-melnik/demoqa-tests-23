@@ -48,7 +48,7 @@ public class PracticeFormTests {
     $("#hobbies-checkbox-2").parent().click();
     // parent - родительский элемент чекбокса, сам input type="checkbox" скрыт
 
-    $("#uploadPicture").uploadFile(new File("src/DataTest/first.jpeg")); // загрузили файл
+    $("#uploadPicture").uploadFile(new File("src/DataTest/dog.jpg")); // загрузили файл
     $("#currentAddress").setValue("Some street 1");
 
     $("#state input").setValue("NCR").pressEnter(); // поле - выпадающий список, ввели текст, кликнули Enter

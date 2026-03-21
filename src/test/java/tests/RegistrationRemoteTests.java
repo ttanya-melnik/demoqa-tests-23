@@ -52,7 +52,7 @@ public class RegistrationRemoteTests {
       $(".react-datepicker__day--028").click();
       $("#subjectsInput").setValue("English").pressEnter();
       $("#hobbies-checkbox-2").parent().click();
-      $("#uploadPicture").uploadFile(new File("src/DataTest/first.jpeg"));
+      $("#uploadPicture").uploadFile(new File("src/DataTest/dog.jpg"));
       $("#currentAddress").setValue("Some street 1");
       $("#state input").setValue("NCR").pressEnter();
       $("#city input").setValue("Delhi").pressEnter();
