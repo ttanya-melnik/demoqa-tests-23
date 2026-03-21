@@ -26,7 +26,7 @@ public class RegistrationRemoteTests {
     Configuration.pageLoadStrategy = "eager"; // Тесты запускаются быстрее
     Configuration.timeout = 5000; // Если элемент не появится за 5 секунд, то тест упадёт
     Configuration.holdBrowserOpen = true;  // После выполнения теста, браузер не закрывается автоматически
-
+    Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
   }
 
 
