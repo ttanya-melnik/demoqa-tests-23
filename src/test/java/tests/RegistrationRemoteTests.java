@@ -27,19 +27,19 @@ public class RegistrationRemoteTests {
     Configuration.baseUrl = "https://demoqa.com"; // url сайта
     Configuration.pageLoadStrategy = "eager"; // Тесты запускаются быстрее
     Configuration.timeout = 5000; // Если элемент не появится за 5 секунд, то тест упадёт
-    Configuration.holdBrowserOpen = true;  // После выполнения теста, браузер не закрывается автоматически
+   //  Configuration.holdBrowserOpen = true;   После выполнения теста, браузер не закрывается автоматически
     // тест будет запускаться на удаленном сервере Selenoid
     Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
 
     DesiredCapabilities capabilities = new DesiredCapabilities();
     capabilities.setCapability("selenoid:options", Map.<String, Object>of(
-        "enableVNC", true,
-        "enableVideo", true
+        "enableVNC", true, // Включили живой просмотр экрана браузера через VNC.
+        "enableVideo", true // Включили автоматическую запись видео всего теста
     ));
-    Configuration.browserCapabilities = capabilities;
+    Configuration.browserCapabilities = capabilities; // Передаёт эти фичи Selenide → Selenoid
 
-    SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+    SelenideLogger.addListener("AllureSelenide", new AllureSelenide()); // Делает Allure-отчёт красивым
   }
 
 
@@ -61,8 +61,8 @@ public class RegistrationRemoteTests {
     step("Open form", () -> {
       open("/automation-practice-form");
       $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
-     // executeJavaScript("$('#fixedban').remove()");
-    //  executeJavaScript("$('footer').remove()");
+    // executeJavaScript("$('#fixedban').remove()");
+    // executeJavaScript("$('footer').remove()");
     });
 
       // метод "step" - делает шаги в тесте более читаемыми

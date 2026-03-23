@@ -66,15 +66,34 @@ tasks.withType(Test) {
 }
 
 // запускает только тесты с тегом @Tag("simple")
-task simple_test(type: Test) {
-    useJUnitPlatform {
-        includeTags("simple")
+    task simple_test(type: Test) {
+        useJUnitPlatform {
+            includeTags("simple")
     }
 }
 
 // запускает только тесты с тегом @Tag("demoqa")
-task demoqa_test(type: Test) {
-    useJUnitPlatform {
-        includeTags("demoqa")
+    task demoqa_test(type: Test) {
+        useJUnitPlatform {
+            includeTags("demoqa")
     }
-}
+
+
+    task remote_test(type: Test) {
+        useJUnitPlatform {
+            includeTags("remote")
+        }
+    }
+
+    task property_test(type: Test) {
+        useJUnitPlatform {
+            includeTags("property")
+        }
+    }
+
+    task hello_test(type: Test) {
+        useJUnitPlatform {
+            includeTags("hello")
+        }
+    }
+        }
