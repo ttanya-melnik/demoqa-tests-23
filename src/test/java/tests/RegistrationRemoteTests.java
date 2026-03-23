@@ -28,7 +28,9 @@ public class RegistrationRemoteTests {
     Configuration.pageLoadStrategy = "eager"; // Тесты запускаются быстрее
     Configuration.timeout = 5000; // Если элемент не появится за 5 секунд, то тест упадёт
     Configuration.holdBrowserOpen = true;  // После выполнения теста, браузер не закрывается автоматически
+    // тест будет запускаться на удаленном сервере Selenoid
     Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+
 
     DesiredCapabilities capabilities = new DesiredCapabilities();
     capabilities.setCapability("selenoid:options", Map.<String, Object>of(
@@ -40,12 +42,14 @@ public class RegistrationRemoteTests {
     SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
   }
 
+
+  // После каждого теста в Allure будут отображаться:
   @AfterEach
   void addAttachments() {
-    Attach.screenshotAs("Last screenshot");
-    Attach.pageSource();
-    Attach.browserConsoleLogs();
-    Attach.addVideo();
+    Attach.screenshotAs("Last screenshot"); // скриншот,
+    Attach.pageSource(); // html-код страницы,
+    Attach.browserConsoleLogs(); // логи консоли браузера,
+    Attach.addVideo();  // видео выполнения теста
 
   }
 
@@ -53,13 +57,16 @@ public class RegistrationRemoteTests {
     @Test
   @Tag("demoqa")
   void successfulRegistrationTest() {
+    // метод "step" - делает шаги в тесте более читаемыми
     step("Open form", () -> {
       open("/automation-practice-form");
       $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
      // executeJavaScript("$('#fixedban').remove()");
     //  executeJavaScript("$('footer').remove()");
     });
-    step("Fill form", () -> {
+
+      // метод "step" - делает шаги в тесте более читаемыми
+      step("Fill form", () -> {
       $("#firstName").setValue("Tatiana");
       $("#lastName").setValue("Mel");
       $("#userEmail").setValue("tanya12345@gmail.com");
@@ -78,7 +85,8 @@ public class RegistrationRemoteTests {
       $("#submit").click();
     });
 
-    step("Verify results", () -> {
+      // метод "step" - делает шаги в тесте более читаемыми
+      step("Verify results", () -> {
       $(".modal-content").should(appear);
       $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
       $(".table-responsive").shouldHave(text("Tatiana"), text("Mel"));
