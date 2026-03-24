@@ -47,9 +47,9 @@ public class SystemPropertiesTests {
     String browser = System.getProperty("browser", "mozilla");
 
     System.out.println(browser);
-    // gradle property_test, вывод - "mozilla"
+    // ./gradlew  property_test, вывод - "mozilla"
 
-    // gradle property_test -Dbrowser=opera, вывод - "opera"
+    // ./gradlew property_test -Dbrowser=opera, вывод - "opera"
 
   }
 
@@ -68,10 +68,6 @@ public class SystemPropertiesTests {
     // ./gradlew hello_test -Dname=Tatiana Mel
     // Вывод: BUILD FAILED: Task 'Mel' not found in root project 'tests-demoqa.com'.
 
-// Это сработает
-    // ./gradlew hello_test -Dname="Tatiana Mel"
-    // ./gradlew hello_test "-Dname="Tatiana Mel"
-    // Вывод: Hello, Tatiana Mel!
 
   }
 
