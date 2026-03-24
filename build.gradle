@@ -51,6 +51,7 @@ dependencies {
 // Настройки для всех задач типа Test (то есть для gradle test, gradle simple_test и т.д.)
 tasks.withType(Test) {
     useJUnitPlatform()
+    systemProperties(System.getProperties()) // Берёт все системные свойства из JVM Gradle и копирует их в тестовую JVM
 
     testLogging {
         lifecycle {
@@ -78,19 +79,19 @@ tasks.withType(Test) {
             includeTags("demoqa")
     }
 
-
+// запускает только тесты с тегом @Tag("remote")
     task remote_test(type: Test) {
         useJUnitPlatform {
             includeTags("remote")
         }
     }
-
+// запускает только тесты с тегом @Tag("property")
     task property_test(type: Test) {
         useJUnitPlatform {
             includeTags("property")
         }
     }
-
+// запускает только тесты с тегом @Tag("hello")
     task hello_test(type: Test) {
         useJUnitPlatform {
             includeTags("hello")
