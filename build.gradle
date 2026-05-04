@@ -10,8 +10,8 @@ plugins {
 
 
 // просто переменные
-def allureVersion = "2.25.0",
-    selenideVersion = "7.12.3"
+def allureVersion = "2.29.1",
+    selenideVersion = "7.16.0"
 
 
 allure {
@@ -36,7 +36,7 @@ repositories {
 
 dependencies {
     testImplementation(
-            "com.codeborne:selenide:7.12.3",
+            "com.codeborne:selenide:7.16.0",
             "com.github.javafaker:javafaker:1.0.2",
             "org.junit.jupiter:junit-jupiter:6.0.2",
             "org.assertj:assertj-core:3.27.6",
@@ -67,16 +67,16 @@ tasks.withType(Test) {
 }
 
 // запускает только тесты с тегом @Tag("simple")
-    task simple_test(type: Test) {
-        useJUnitPlatform {
-            includeTags("simple")
+task simple_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("simple")
     }
 }
 
 // запускает только тесты с тегом @Tag("demoqa")
-    task demoqa_test(type: Test) {
-        useJUnitPlatform {
-            includeTags("demoqa")
+task demoqa_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("demoqa")
     }
 
 // запускает только тесты с тегом @Tag("remote")
@@ -97,4 +97,4 @@ tasks.withType(Test) {
             includeTags("hello")
         }
     }
-        }
+}
