@@ -41,28 +41,29 @@ public class RegistrationWithRandomUtilsTests {
     String userGender = getRandomGender();
     String subjectsInput = getRandomSubjectsInput();
 
-
-
-
     open("/automation-practice-form");
     $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
     $("#firstName").setValue(firstName);
     $("#lastName").setValue(lastName);
     $("#userEmail").setValue(userEmail);
-    $("#genterWrapper").$(byText(userGender)).click();
+    $("#genterWrapper").$(byText(userGender))
+        .click();
     $("#userNumber").setValue(userNumber);
     $("#dateOfBirthInput").click();
     $(".react-datepicker__month-select").selectOption("September");
     $(".react-datepicker__year-select").selectOption("2004");
     $(".react-datepicker__day--028").click();
-    $("#subjectsInput").setValue(subjectsInput).pressEnter();
+    $("#subjectsInput").setValue(subjectsInput)
+        .pressEnter();
 
-
-    $("#hobbies-checkbox-2").parent().click();
+    $("#hobbies-checkbox-2").parent()
+        .click();
     $("#uploadPicture").uploadFile(new File("src/DataTest/first.jpeg"));
     $("#currentAddress").setValue(streetAddress);
-    $("#state input").setValue("NCR").pressEnter();
-    $("#city input").setValue("Delhi").pressEnter();
+    $("#state input").setValue("NCR")
+        .pressEnter();
+    $("#city input").setValue("Delhi")
+        .pressEnter();
     $("#submit").click();
     $(".modal-content").should(appear);
     $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));

@@ -2,13 +2,20 @@ package pages.components;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class   CalendarComponent {
+import com.codeborne.selenide.SelenideElement;
 
-  public void setDate(String day, String month, String year) {
 
-    $("#dateOfBirthInput").click(); //
-    $(".react-datepicker__month-select").selectOption("September");
-    $(".react-datepicker__year-select").selectOption("2004");
-    $(".react-datepicker__day--028").click();
+public class CalendarComponent {
+
+
+  public static SelenideElement dateOfBirthInput = $("#dateOfBirthInput");
+
+
+  public CalendarComponent dateOfBirthInput(String day, String month, String year) {
+    dateOfBirthInput.setValue(day + " " + month + " " + year);
+    return this;
+
   }
+
+
 }
