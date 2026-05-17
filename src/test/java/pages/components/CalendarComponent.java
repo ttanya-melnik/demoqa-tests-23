@@ -8,7 +8,7 @@ import com.codeborne.selenide.SelenideElement;
 public class CalendarComponent {
 
 
-  public static SelenideElement dateOfBirthInput = $("#dateOfBirthInput");
+  private final SelenideElement dateOfBirthInput = $("#dateOfBirthInput");
 
 
   public CalendarComponent dateOfBirthInput(String day, String month, String year) {

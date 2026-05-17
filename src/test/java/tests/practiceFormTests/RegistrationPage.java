@@ -14,10 +14,8 @@ public class RegistrationPage { // класс — Page Object
   private SelenideElement firstNameInput = $("#firstName");
   private SelenideElement lastNameInput = $("#lastName");
   private SelenideElement userEmailInput = $("#userEmail");
-
   private SelenideElement genderWrapper = $("#genterWrapper");
   private SelenideElement userNumberInput = $("#userNumber");
-
   private SelenideElement subjectsInput = $("#subjectsInput");
   private SelenideElement hobbiesCheckbox = $("#hobbies-checkbox-2");
   private SelenideElement uploadPictureInput = $("#uploadPicture");
